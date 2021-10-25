@@ -12,7 +12,6 @@ class NotesInteractor(
     private val local: INotesDataSource.ILocalNotesSource
 ): NotesRepository {
 
-    //Tengo que hacer que mande el parametro, el success y el error
     override suspend fun addNote(note: Note) {
         val entity = NotesEntityMapper().mapToEntity(note)
         local.addNote(entity)
